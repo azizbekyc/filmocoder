@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmoCoder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c8e0f1;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .highlight {
+            color: #2f2b2b;
+            background-color: #72d5c8; /* Rangni o'zgartirildi */
+            padding: 5px;
+            border-radius: 5px; /* Burchaklarni yumshatish */
+        }
+        .contact {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none; /* Dastlab yashirilgan */
+        }
+        .contact h2 {
+            margin-top: 0;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact label {
+            margin-top: 10px;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mobil qurilmalar uchun */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                padding: 10px;
+                text-align: center;
+            }
+            .content {
+                padding: 10px;
+            }
+            .contact {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FilmoCoder</h1>
+        <p>Filmlar, multfilmlar, yangiliklar va dasturlash haqida ma'lumotlar</p>
+    </header>
+    <nav>
+        <a href="#home">Asosiy</a>
+        <a href="#movies">Filmlar</a>
+        <a href="#news">Yangiliklar</a>
+        <a href="#contact" id="contact-link">Aloqa</a>
+    </nav>
+    <div class="content">
+        <h2>FilmoCoder'ga Xush Kelibsiz!</h2>
+        <p>Bu yerda siz filmlar, animatsiyalar, yangiliklar, faktlar va dasturlash bo‘yicha so‘nggi ma'lumotlarni topasiz.</p>
+        <p><span class="highlight">FilmoCoder</span>da biz kino sehrini va dasturlash kuchini birlashtirishga ishonamiz. Siz film ixlosmandi, animatsiya ishqibozi yoki dasturlashni sevuvchi bo‘lsangiz, bizda siz uchun qiziqarli narsa mavjud!</p>
+        <p>Bizni kuzatib boring:</p>
+        <ul>
+            <li>Filmlar haqida chuqur sharhlar va tavsiyalar</li>
+            <li>Sevimli animatsiyalaringizning orqasidagi voqealar</li>
+            <li>O entertainment sanoatidagi yangiliklar</li>
+            <li>Filmlar va dasturlash haqidagi qiziqarli faktlar</li>
+            <li>Dasturlash bo‘yicha darsliklar va resurslar</li>
+        </ul>
+        <p>Bizning jamoaga qo‘shiling va <span class="highlight">FilmoCoder</span> dunyosiga kirib, ko‘ngilocharlik va texnologiya qanday uchrashishini kashf eting!</p>
+        
+        <!-- Aloqa bo‘limi -->
+        <div class="contact" id="contact-section">
+            <h2>Aloqa</h2>
+            <p>Agar sizda savollar bo‘lsa yoki shunchaki salom demoqchi bo‘lsangiz, biz bilan bog‘lanishingiz mumkin!</p>
+            <form action="#" method="post">
+                <label for="name">Ismingiz:</label>
+                <input type="text" id="name" name="name" required pattern="[A-Za-z\s]+" title="Faqat harflar va bo‘shliq ruxsat etiladi">
+
+                <label for="email">Elektron pochta:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Xabar:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Xabar yuborish</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contact-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            var contactSection = document.getElementById('contact-section');
+            contactSection.style.display = (contactSection.style.display === 'none' || contactSection.style.display === '') ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
